@@ -8,12 +8,12 @@ public class Game implements GameRM<Game> {
 	private char[][] opponentMatrix;
 
 	public char[][] getPlayerMatrix() {
-		// TODO Por implementar
+		// Atualiza a matriz do Utilizador
 		return null;
 	}
 
 	public char[][] getOpponentMatrix() {
-		// TODO Por implementar
+		// Atualiza a matriz do oponente
 		return null;
 	}
 
@@ -27,7 +27,7 @@ public class Game implements GameRM<Game> {
 	}
 
 	public void randomPlay() {
-		// TODO Por implementar
+		// Gerar jogadas aleatorias
 	}
 
 
@@ -37,12 +37,12 @@ public class Game implements GameRM<Game> {
 	}
 
 	public boolean playerWon() {
-		// TODO Por implementar
+		// Utilizador a vencer
 		return false;
 	}
 
 	public boolean opponentWon() {
-		// TODO Por implementar
+		// Oponente a vencer
 		return false;
 	}
 
@@ -55,7 +55,7 @@ public class Game implements GameRM<Game> {
 	}
 
 	public Game createNewGame() {
-		// TODO Por implementar
+		// Criacao de um novo jogo
 		return null;
 	}
 
