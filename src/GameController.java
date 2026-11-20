@@ -4,7 +4,7 @@ public class GameController implements GameControllerRM<ColorImage> {
 	private Game game;
 
 	public GameController(Game game) {
-		// TODO Por implementar
+		// Parte do codigo onde vou inserir os controles da aplicacao
 	}
 
 	public ColorImage getImage() {
