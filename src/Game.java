@@ -7,12 +7,12 @@ public class Game implements GameRM<Game> {
 	private char[][] playerMatrix;
 	private char[][] opponentMatrix;
 
-	public Game(){
+	public Game() {
 		playerMatrix = copyMatrix(Params.DEFAULT_PLAYER_MATRIX);
 		opponentMatrix = copyMatrix(Params.DEFAULT_OPPONENT_MATRIX);
 	}
 
-	public Game(char[][] player, char[][] opponent){
+	public Game(char[][] player, char[][] opponent) {
 		playerMatrix = copyMatrix(player);
 		opponentMatrix = copyMatrix(opponent);
 	}
@@ -26,8 +26,23 @@ public class Game implements GameRM<Game> {
 	}
 
 	public String toString() {
-		// TODO Por implementar
-		return "";
+		return matrixToString("Player: ", playerMatrix) + matrixToString("Opponent: ", opponentMatrix);
+	}
+
+	public static String matrixToString(String title, char[][] matrix){
+		String result = title + " \n   A B C D E F G H I J\n";
+
+		for (int i = 0; i < 10; i++) {
+			int numLinha = i + 1;
+			if (numLinha < 10)
+				result += " ";
+			result += numLinha + " |";
+			for (int j = 0; j < 10; j++) {
+				result += matrix[i][j] + "|";
+			}
+			result += "\n";
+		}
+		return result;
 	}
 
 	public void manualPlayAt(int row, int col) {
@@ -67,13 +82,19 @@ public class Game implements GameRM<Game> {
 		return null;
 	}
 
-	static char[][] copyMatrix(char[][] matrix){
+	static char[][] copyMatrix(char[][] matrix) {
 		char[][] copy = new char[10][10];
-		for(int i = 0; i < 10; i++){
-			for(int j = 0; j < 10; j++){
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
 				copy[i][j] = matrix[i][j];
 			}
 		}
 		return copy;
+	}
+
+	static void main() {
+		Game test = new Game();
+		System.out.println(test.toString());
+
 	}
 }
