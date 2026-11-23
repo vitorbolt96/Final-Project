@@ -7,14 +7,22 @@ public class Game implements GameRM<Game> {
 	private char[][] playerMatrix;
 	private char[][] opponentMatrix;
 
+	public Game(){
+		playerMatrix = copyMatrix(Params.DEFAULT_PLAYER_MATRIX);
+		opponentMatrix = copyMatrix(Params.DEFAULT_OPPONENT_MATRIX);
+	}
+
+	public Game(char[][] player, char[][] opponent){
+		playerMatrix = copyMatrix(player);
+		opponentMatrix = copyMatrix(opponent);
+	}
+
 	public char[][] getPlayerMatrix() {
-		// Atualiza a matriz do Utilizador
-		return null;
+		return copyMatrix(playerMatrix);
 	}
 
 	public char[][] getOpponentMatrix() {
-		// Atualiza a matriz do oponente
-		return null;
+		return copyMatrix(opponentMatrix);
 	}
 
 	public String toString() {
@@ -59,4 +67,13 @@ public class Game implements GameRM<Game> {
 		return null;
 	}
 
+	static char[][] copyMatrix(char[][] matrix){
+		char[][] copy = new char[10][10];
+		for(int i = 0; i < 10; i++){
+			for(int j = 0; j < 10; j++){
+				copy[i][j] = matrix[i][j];
+			}
+		}
+		return copy;
+	}
 }
