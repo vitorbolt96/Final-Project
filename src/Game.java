@@ -46,7 +46,24 @@ public class Game implements GameRM<Game> {
 	}
 
 	public void manualPlayAt(int row, int col) {
-		// TODO Por implementar
+		if(row < 0 || row > 10 || col < 0 || col > 10){
+			IO.println("Coordenada fora do tabuleiro.");
+			return;
+		}
+		if(opponentMatrix[row][col] == 'X' || opponentMatrix[row][col] == '•'){
+			IO.println("Posição já jogada.");
+			return;
+		}
+		if(opponentMatrix[row][col] == ' '){
+			opponentMatrix[row][col] = '•';
+			IO.println("Tiro na água!");
+		}
+		if(opponentMatrix[row][col] >= '1' && opponentMatrix[row][col] <= '5'){
+			char boatType = opponentMatrix[row][col];
+			opponentMatrix[row][col] = 'X';
+			IO.println("O barco de " + boatType + "de comprimento foi atingido!");
+		}
+		// Criar verificacao de se o barco afundou
 	}
 
 	public void randomPlay() {
